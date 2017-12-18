@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no" />
+<title>{dede:field.title/}</title>
+<meta name="keywords" content="{dede:field.keywords/}" />
+<meta name="description" content="{dede:field.description  function='html2text(@me)'/}" />
+<link rel="stylesheet" type="text/css" href="{dede:global.cfg_basehost/}/Assets/css/reset.css" tppabs="/Assets/css/reset.css"/>
+<script type="text/javascript" src="{dede:global.cfg_basehost/}/Assets/js/jquery-1.8.3.min.js" tppabs="/Assets/js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="{dede:global.cfg_basehost/}/Assets/js/js_z.js" tppabs="/Assets/js/js_z.js"></script>
+<link rel="stylesheet" type="text/css" href="{dede:global.cfg_basehost/}/Assets/css/thems.css" tppabs="/Assets/css/thems.css">
+<link rel="stylesheet" type="text/css" href="{dede:global.cfg_basehost/}/Assets/css/responsive.css" tppabs="/Assets/css/responsive.css">
+</head>
+
+<body>
+{dede:include filename='head.htm'/}
+<!--幻灯片-->
+<div class="banner_s"><img src="{dede:global.cfg_basehost/}/Assets/upload/banner_a.jpg" alt=""/></div>
+<div class="pst_bg">
+    <div class="pst">
+        您当前的位置：
+        {dede:field name='position'/}
+    </div>
+</div>
+<div class="scd clearfix">
+    <div class="scd_l">
+        <div class="s_name">
+            <h2>{dede:field name='typename' function="GetTypeName（@me）"/}</h2>
+        </div>
+        
+    </div>
+    <div class="art_body">
+        <div class="biaoti"><h1>{dede:field.title/}</h1></div>
+        <div class="zhengwen">{dede:field.body/}</div>
+    </div>
+    
+</div>
+{dede:include filename='footer.htm'/}
+</body>
+</html>

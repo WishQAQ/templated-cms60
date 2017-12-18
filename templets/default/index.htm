@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no" />
+<title>{dede:global.cfg_webname/}</title>
+<meta name="keywords" content="{dede:global.cfg_keywords/}" />
+<meta name="description" content="{dede:global.cfg_description/}" />
+<link rel="stylesheet" type="text/css" href="{dede:global.cfg_basehost/}/Assets/css/reset.css" tppabs="Assets/css/reset.css"/>
+<script type="text/javascript" src="{dede:global.cfg_basehost/}/Assets/js/jquery-1.8.3.min.js" tppabs="Assets/js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="{dede:global.cfg_basehost/}/Assets/js/js_z.js" tppabs="Assets/js/js_z.js"></script>
+<script type="text/javascript" src="{dede:global.cfg_basehost/}/Assets/js/banner.js" tppabs="Assets/js/banner.js"></script>
+<link rel="stylesheet" type="text/css" href="{dede:global.cfg_basehost/}/Assets/css/thems.css" tppabs="Assets/css/thems.css">
+<link rel="stylesheet" type="text/css" href="{dede:global.cfg_basehost/}/Assets/css/responsive.css" tppabs="Assets/css/responsive.css">
+<script language="javascript">
+$(function(){
+	$('#owl-demo').owlCarousel({
+		items: 1,
+		navigation: true,
+		navigationText: ["上一个","下一个"],
+		autoPlay: true,
+		stopOnHover: true
+	}).hover(function(){
+		$('.owl-buttons').show();
+	}, function(){
+		$('.owl-buttons').hide();
+	});
+});
+</script>
+</head>
+
+<body>
+
+{dede:include filename='head.htm'/}
+<!--幻灯片-->
+<div id="banner" class="banner"> 
+    <div id="owl-demo" class="owl-carousel"> 
+        <a class="item" target="_blank" href="" style="background-image:url(Assets/upload/banner.jpg)">
+            <img src="{dede:global.cfg_basehost/}/Assets/upload/banner.jpg" tppabs="Assets/upload/banner.jpg" alt="">
+        </a>
+        <a class="item" target="_blank" href="" style="background-image:url(Assets/upload/banner.jpg)">
+            <img src="{dede:global.cfg_basehost/}/Assets/upload/banner.jpg" tppabs="Assets/upload/banner.jpg" alt="">
+        </a>
+        <a class="item" target="_blank" href="" style="background-image:url(Assets/upload/banner.jpg)">
+            <img src="{dede:global.cfg_basehost/}/Assets/upload/banner.jpg" tppabs="Assets/upload/banner.jpg" alt="">
+        </a>
+    </div>
+</div>
+<!--幻灯片-->
+<div class="space_hx">&nbsp;</div>
+<div class="i_m">
+	<div class="i_name"><img src="{dede:global.cfg_basehost/}/Assets/images/n1.png" tppabs="Assets/images/n1.png" width="171" height="59" alt=""/></div>
+    <ul class="i_ma clearfix">
+         {dede:arclist row='3' orderby='pubdate' flag='c' type='image'}
+    	<li>
+
+            <div class="tu"><a href="[field:arcurl/]">[field:image/]</a></div>
+            <div class="des">[field:description function='cn_substr(Html2text("@me")."...",120)'/]</div>
+			<a href="[field:arcurl/]" class="more">+查看详情</a>
+        </li>
+        {/dede:arclist}
+    </ul>
+</div>
+<div class="space_hx">&nbsp;</div>
+<div class="hui_bg">
+	<div class="i_m clearfix">
+    	<div class="i_ml">
+        	<div class="i_title">
+            	{dede:type typeid='5'}<a href="[field:typelink /]"><img src="[field:global.cfg_basehost/]/Assets/images/n2.jpg" width="139" height="22" alt=""/></a>
+                <div class="line">&nbsp;</div>
+                <a href="[field:typelink /]" class="more">+MORE</a>
+                {/dede:type}
+            </div>
+            <div class="i_mb">
+                {dede:arclist row='3' typeid='5' orderby='pubdate' type='image'}
+            	<dl class="clearfix">
+                	<dt><a href="[field:arcurl/]">[field:image/]</a></dt>
+                    <dd>
+                    	<div class="title"><a href="[field:arcurl/]">[field:title/]</a></div>
+                        <div class="des">[field:description function='cn_substr(Html2text("@me")."...",160)'/]</div>
+                        <div class="time">
+                        	<a href="[field:arcurl/]">+SEE MORE</a>
+                            [field:pubdate function="GetDateMK(@me)"/]
+                        </div>
+                    </dd>
+                </dl>
+                {/dede:arclist}
+            </div>
+        </div>
+        <div class="i_mr">
+        	<div class="i_title">
+            	{dede:type typeid='2'}<a href="[field:typelink /]"><img src="[field:global.cfg_basehost/]/Assets/images/n3.jpg" width="168" height="22" alt=""/></a>
+                <div class="line">&nbsp;</div>
+                <a href="[field:typelink /]" class="more">+MORE</a>
+                {/dede:type}
+            </div>
+            <dl class="i_mc clearfix">
+            	{dede:arclist typeid='2' row='1' orderby='pubdate' type='image'}
+                <dt><a href="[field:arcurl/]">[field:image/]</a></dt>
+                {/dede:arclist}
+                <dd>
+                	<ul>
+                        {dede:arclist typeid='2' row='4' orderby='pubdate'}
+                    	<li class="on">
+                        	<i>&nbsp;</i>
+                        	<div class="title"><a href="">[field:title/]</a></div>
+                            <div class="des">[field:description function='cn_substr(Html2text("@me")."...",45)'/]</div>
+                        </li>
+                        {/dede:arclist}
+                    </ul>
+                </dd>
+            </dl>
+            <div class="space_hx">&nbsp;</div>
+            <div class="i_title">
+            	{dede:type typeid='4'}<a href="[field:typelink /]"><img src="[field:global.cfg_basehost/]/Assets/images/n4.jpg" width="151" height="22" alt=""/></a>
+                <div class="line">&nbsp;</div>
+                <a href="[field:typelink /]" class="more">+MORE</a>
+                 {/dede:type}
+            </div>
+            <dl class="i_md clearfix">
+                {dede:arclist typeid='3' row='1' orderby='pubdate' type='image'}
+            	<dt><a href="[field:arcurl/]">[field:image/]</dt>
+                <dd>[field:description function='cn_substr(Html2text("@me")."...",255)'/]</dd>
+                {/dede:arclist}
+            </dl>
+        </div>
+    </div>
+</div>
+{dede:include filename='footer.htm'/}
+</body>
+</html>
